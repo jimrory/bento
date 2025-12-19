@@ -12,9 +12,7 @@ export default function Home() {
         />
 
         <div className="mt-8">
-          {/* 1. 名字已改为 Jim Luo */}
           <h2 className="font-heading text-3xl sm:text-[44px]">Jim Luo</h2>
-          {/* 2. 简介已改为 nothing */}
           <p className="font-base mt-6 text-base sm:text-xl">
             nothing
           </p>
@@ -27,7 +25,10 @@ export default function Home() {
           id="grid-container"
           className="text-foreground grid w-full grid-cols-1 gap-7 sm:grid-cols-2 sm:gap-10 md:grid-cols-3 xl:w-1/2 xl:pb-16"
         >
-          {Object.keys(LINKS).map((key) => (
+          {/* 这里是核心过滤逻辑：只有 link 不为空的才会被展示 */}
+          {Object.keys(LINKS)
+            .filter((key) => LINKS[key].link.trim() !== '')
+            .map((key) => (
             <a
               className="border-border shadow-shadow text-main-foreground rounded-base bg-main hover:translate-x-boxShadowX hover:translate-y-boxShadowY border-2 p-5 transition-all hover:shadow-none"
               key={key}
