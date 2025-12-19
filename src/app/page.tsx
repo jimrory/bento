@@ -12,16 +12,11 @@ export default function Home() {
         />
 
         <div className="mt-8">
-          <h2 className="font-heading text-3xl sm:text-[44px]">John Doe</h2>
+          {/* 1. 名字已改为 Jim Luo */}
+          <h2 className="font-heading text-3xl sm:text-[44px]">Jim Luo</h2>
+          {/* 2. 简介已改为 nothing */}
           <p className="font-base mt-6 text-base sm:text-xl">
-            This is the bento neobrutalism template. Check the{' '}
-            <a
-              className="font-heading underline"
-              href="https://github.com/neobrutalism-templates/bento"
-            >
-              github repo
-            </a>{' '}
-            for more info.
+            nothing
           </p>
         </div>
 
