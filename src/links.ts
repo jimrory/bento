@@ -16,6 +16,7 @@ import tiktok from '../public/icons/tiktok.svg'
 import twitch from '../public/icons/twitch.svg'
 import x from '../public/icons/x.svg'
 import youtube from '../public/icons/youtube.svg'
+// 导入你上传的新图标
 import telegram from '../public/icons/telegram.svg'
 import nike from '../public/icons/nike.svg'
 
@@ -28,10 +29,10 @@ type Link = {
   text?: string
 }
 
-// --- 关键修改点：这里只保留你想要在首页显示的 ID ---
+// 只有出现在这个数组里的项目，才会被考虑显示在首页
 const websites = [
-  'telegram', 
-  'running',  
+  'telegram',
+  'running',
   'x',
   'instagram',
   'youtube',
@@ -68,15 +69,15 @@ const LINKS: { [key in SocialMedia]: Link } = {
     link: 'https://www.youtube.com/@jimrory',
     text: '@jimrory',
   },
-  // 以下项目虽然定义了，但因为没写在上面的 websites 数组里，所以不会显示在首页
-  github: { title: 'Github', icon: github, link: 'https://github.com/jimrory', text: '@jimrory' },
+  // 以下项目链接为空，将配合 page.tsx 逻辑彻底隐藏
+  github: { title: 'Github', icon: github, link: '', text: '' },
+  linkedin: { title: 'Linkedin', icon: linkedin, link: '', text: '' },
   behance: { title: 'Behance', icon: behance, link: '', text: '' },
   buymeacoffee: { title: 'Buy me a coffee', icon: buymeacoffee, link: '' },
   dribbble: { title: 'Dribbble', icon: dribbble, link: '', text: '' },
   figma: { title: 'Figma', icon: figma, link: '', text: '' },
   gumroad: { title: 'Gumroad', icon: gumroad, link: '' },
   kofi: { title: 'Ko-fi', icon: kofi, link: '', text: '' },
-  linkedin: { title: 'Linkedin', icon: linkedin, link: '', text: '' },
   medium: { title: 'Medium', icon: medium, link: '', text: '' },
   patreon: { title: 'Patreon', icon: patreon, link: '', text: '' },
   producthunt: { title: 'Product Hunt', icon: producthunt, link: '', text: '' },
