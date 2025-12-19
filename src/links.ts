@@ -16,7 +16,6 @@ import tiktok from '../public/icons/tiktok.svg'
 import twitch from '../public/icons/twitch.svg'
 import x from '../public/icons/x.svg'
 import youtube from '../public/icons/youtube.svg'
-// --- 新增图标导入 ---
 import telegram from '../public/icons/telegram.svg'
 import nike from '../public/icons/nike.svg'
 
@@ -29,32 +28,25 @@ type Link = {
   text?: string
 }
 
-// 这里决定了网页上显示的顺序和项目
+// --- 关键修改点：这里只保留你想要在首页显示的 ID ---
 const websites = [
-  'github',
-  'telegram',  // 已启用
-  'running',   // 已启用
+  'telegram', 
+  'running',  
   'x',
   'instagram',
   'youtube',
 ]
 
 const LINKS: { [key in SocialMedia]: Link } = {
-  github: {
-    title: 'Github',
-    icon: github,
-    link: 'https://github.com/jimrory',
-    text: '@jimrory',
-  },
   telegram: {
     title: 'Telegram',
-    icon: telegram, // 使用你上传的 telegram.svg
+    icon: telegram,
     link: 'https://t.me/jimrory',
     text: '@jimrory',
   },
   running: {
     title: 'Running Log',
-    icon: nike,     // 使用你上传的 nike.svg
+    icon: nike,
     link: 'https://running.jimluo.com',
     text: 'Running Journey',
   },
@@ -76,13 +68,15 @@ const LINKS: { [key in SocialMedia]: Link } = {
     link: 'https://www.youtube.com/@jimrory',
     text: '@jimrory',
   },
-  // 备选项（不在上面的 websites 列表中，所以不会在页面显示）
+  // 以下项目虽然定义了，但因为没写在上面的 websites 数组里，所以不会显示在首页
+  github: { title: 'Github', icon: github, link: 'https://github.com/jimrory', text: '@jimrory' },
   behance: { title: 'Behance', icon: behance, link: '', text: '' },
   buymeacoffee: { title: 'Buy me a coffee', icon: buymeacoffee, link: '' },
   dribbble: { title: 'Dribbble', icon: dribbble, link: '', text: '' },
   figma: { title: 'Figma', icon: figma, link: '', text: '' },
   gumroad: { title: 'Gumroad', icon: gumroad, link: '' },
   kofi: { title: 'Ko-fi', icon: kofi, link: '', text: '' },
+  linkedin: { title: 'Linkedin', icon: linkedin, link: '', text: '' },
   medium: { title: 'Medium', icon: medium, link: '', text: '' },
   patreon: { title: 'Patreon', icon: patreon, link: '', text: '' },
   producthunt: { title: 'Product Hunt', icon: producthunt, link: '', text: '' },
