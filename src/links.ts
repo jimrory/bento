@@ -16,7 +16,6 @@ import tiktok from '../public/icons/tiktok.svg'
 import twitch from '../public/icons/twitch.svg'
 import x from '../public/icons/x.svg'
 import youtube from '../public/icons/youtube.svg'
-// 导入你上传的新图标
 import telegram from '../public/icons/telegram.svg'
 import nike from '../public/icons/nike.svg'
 
@@ -29,32 +28,26 @@ type Link = {
   text?: string
 }
 
-// 只有出现在这个数组里的项目，才会被考虑显示在首页
+// --- 按照你要求的顺序重新排列了这里 ---
 const websites = [
-  'telegram',
-  'running',
-  'x',
-  'instagram',
-  'youtube',
+  'running',   // 1. Running Log
+  'youtube',   // 2. Youtube
+  'instagram', // 3. Instagram
+  'x',         // 4. X
+  'telegram',  // 5. Telegram
 ]
 
 const LINKS: { [key in SocialMedia]: Link } = {
-  telegram: {
-    title: 'Telegram',
-    icon: telegram,
-    link: 'https://t.me/jimrory',
-    text: '@jimrory',
-  },
   running: {
     title: 'Running Log',
     icon: nike,
     link: 'https://running.jimluo.com',
     text: 'Running Journey',
   },
-  x: {
-    title: 'X (Twitter)',
-    icon: x,
-    link: 'https://x.com/jimrory',
+  youtube: {
+    title: 'Youtube',
+    icon: youtube,
+    link: 'https://www.youtube.com/@jimrory',
     text: '@jimrory',
   },
   instagram: {
@@ -63,13 +56,19 @@ const LINKS: { [key in SocialMedia]: Link } = {
     link: 'https://www.instagram.com/jimrory/',
     text: '@jimrory',
   },
-  youtube: {
-    title: 'Youtube',
-    icon: youtube,
-    link: 'https://www.youtube.com/@jimrory',
+  x: {
+    title: 'X (Twitter)',
+    icon: x,
+    link: 'https://x.com/jimrory',
     text: '@jimrory',
   },
-  // 以下项目链接为空，将配合 page.tsx 逻辑彻底隐藏
+  telegram: {
+    title: 'Telegram',
+    icon: telegram,
+    link: 'https://t.me/jimrory',
+    text: '@jimrory',
+  },
+  // 以下项目链接为空且未加入 websites 数组，将保持隐藏
   github: { title: 'Github', icon: github, link: '', text: '' },
   linkedin: { title: 'Linkedin', icon: linkedin, link: '', text: '' },
   behance: { title: 'Behance', icon: behance, link: '', text: '' },
