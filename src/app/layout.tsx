@@ -6,7 +6,10 @@ import { ThemeProvider } from './theme-provider'
 const workSans = Work_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'John Doe',
+  // 网页标题
+  title: 'jim luo', 
+  // 网页描述
+  description: 'Jim Luo\'s personal bento site.', 
 }
 
 export default function RootLayout({
