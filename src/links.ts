@@ -17,6 +17,7 @@ import twitch from '../public/icons/twitch.svg'
 import x from '../public/icons/x.svg'
 import youtube from '../public/icons/youtube.svg'
 import telegram from '../public/icons/telegram.svg'
+import whatsapp from '../public/icons/whatsapp.svg'
 import nike from '../public/icons/nike.svg'
 
 type SocialMedia = (typeof websites)[number]
@@ -35,6 +36,7 @@ const websites = [
   'instagram', // 3. Instagram
   'x',         // 4. X
   'telegram',  // 5. Telegram
+  'whatsapp',  // 6. WhatsApp
 ]
 
 const LINKS: { [key in SocialMedia]: Link } = {
@@ -67,6 +69,12 @@ const LINKS: { [key in SocialMedia]: Link } = {
     icon: telegram,
     link: 'https://t.me/jimrory',
     text: '@jimrory',
+  },
+  whatsapp: {
+    title: 'WhatsApp',
+    icon: whatsapp,
+    link: 'https://wa.me/12038380830',
+    text: 'Chat with me',
   },
   // 以下项目链接为空且未加入 websites 数组，将保持隐藏
   github: { title: 'Github', icon: github, link: '', text: '' },
